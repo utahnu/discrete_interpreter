@@ -1,0 +1,48 @@
+[build-system]
+requires = ["setuptools>=74.1.2"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "project"
+description = "An interpreter to evaluate Datalog rules and answer Datalog queries"
+version = "0.0.1"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+  "tabulate",
+  "types-tabulate",
+]
+
+[project.scripts]
+project = "project.project:projectcli"
+
+[project.optional-dependencies]
+dev = [
+  "pytest",
+  "mypy",
+  "pre-commit",
+  "ruff",
+  "ipykernel",
+  "ipytest",
+]
+
+classroom = [
+  "pytest",
+]
+
+[tool.ruff]
+target-version = "py312"
+lint.extend-select = ["I","FIX002", "TD001"]
+
+[tool.nitpick]
+style = "https://raw.githubusercontent.com/wemake-services/wemake-python-styleguide/master/styles/mypy.toml"
+
+[tool.mypy]
+exclude = [
+  "(^|/)tests?/",
+]
+check_untyped_defs = true
+strict = true
+
+[tool.pytest.ini_options]
+addopts = "--doctest-modules --doctest-report ndiff"

@@ -1,0 +1,33 @@
+{
+  // keep type checking mellow
+  "typeCheckingMode": "off",
+
+  // ONLY analyze opened files (or switch to "workspace" if you want whole-project)
+  "diagnosticMode": "workspace",
+
+  // Limit analysis scope to these folders
+  "include": ["src", "tests"],
+
+  // Hard-ignore virtual envs and other noise
+  "exclude": [
+    "**/.venv/**",
+    "**/venv/**",
+    "**/.git/**",
+    "**/.mypy_cache/**",
+    "**/.pytest_cache/**",
+    "**/__pycache__/**",
+    "**/build/**",
+    "**/dist/**"
+  ],
+
+  // Make imports from a src/ layout work in tests
+  "executionEnvironments": [
+    { "root": ".", "extraPaths": ["./src"] }
+  ],
+
+  // Ignore warnings beyond our control
+  "diagnosticSeverityOverrides": {
+    "reportMissingTypeStubs": "none",
+    "reportMissingModuleSource": "none"
+  }
+}
