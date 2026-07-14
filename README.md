@@ -7,6 +7,10 @@ An interpreter for Datalog programs implemented in Python. The interpreter parse
 - **Python requirement:** >= 3.11
 - **Package name:** `project` (see `pyproject.toml`)
 
+## Background
+
+This project is a Datalog interpreter based on the Datalog database language, which in turn is based on concepts from Prolog. Datalog is a declarative, rule-based language tailored for expressing database queries and recursive relationships using facts and rules over finite relations. The interpreter here implements parsing, relational-algebra evaluation, and optimized rule iteration over finite datasets.
+
 ## Features
 - Full Datalog parsing pipeline (`lexer` + `parser`).
 - Relational-algebra implementation (`Relation`) with `select`, `project`, `join`, `rename`, `union`, `difference`.
